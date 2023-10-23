@@ -1,0 +1,12 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&family=Fira+Sans:wght@300;400;700&display=swap');
+
+/* Apply fonts to headings and titles */
+h1, h2, h3 {
+    font-family: 'Roboto Slab', sans-serif;
+}
+
+/* Apply fonts to paragraphs and text */
+p{
+    font-family: 'Fira Sans', sans-serif;
+}
