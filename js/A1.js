@@ -1,6 +1,8 @@
 // Import the D3 packages we want to use
 import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7/+esm";
 
+const URL = "https://erfanfathi.github.io/DV2/";
+
 function drawChart_bar1(name) {
     var city_name;
     // if name was 1 then set it to Albuquerque
@@ -35,7 +37,7 @@ function drawChart_bar1(name) {
     let g = svg.append("g")
             .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-    d3.csv("../data/A1_Bar1" + city_name + ".csv").then(function(data) {
+    d3.csv(URL + "data/A1_Bar1" + city_name + ".csv").then(function(data) {
         data.forEach(function(d) {
             d.count = +d.count;
         });
@@ -151,7 +153,7 @@ function drawChart_bar1(name) {
 }
 
 // Selectation Part
-fetch("./DV2/utils/cities.json")
+fetch(URL + "utils/cities.json")
     .then(response => response.json())
     .then(data => {
         const citySelect = document.getElementById('city');
