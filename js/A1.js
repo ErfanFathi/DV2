@@ -1,9 +1,19 @@
 // Import the D3 packages we want to use
 import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7/+esm";
 
-function drawChart_bar1() {
+function drawChart_bar1(name) {
+    var city_name;
+    // if name was 1 then set it to Albuquerque
+    if (name == 1) {
+        city_name = "Albuquerque";
+    }else {
+        city_name = name;
+    }
+    console.log(city_name);
     // Select the container for the bar chart
     let div_id = "#bar1";
+    // Remove any previous chart
+    d3.select(div_id).select("svg").remove();
 
     // Init the div target dimentions
     let ratio = 2.5; // 3 width = 1 height
@@ -25,12 +35,12 @@ function drawChart_bar1() {
     let g = svg.append("g")
             .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-    d3.csv("../data/A1_Bar1.csv").then(function(data) {
+    d3.csv("../data/A1_Bar1" + city_name + ".csv").then(function(data) {
         data.forEach(function(d) {
             d.count = +d.count;
         });
 
-    data = data.slice(0, 50);
+    data = data.slice(0, 5);
 
     xScale.domain(data.map(function(d) { return d.scientific_name; }));
     yScale.domain([0, d3.max(data, function(d) { return d.count; })]);
@@ -140,4 +150,22 @@ function drawChart_bar1() {
     }
 }
 
-drawChart_bar1()
+// Selectation Part
+fetch("../utils/cities.json")
+    .then(response => response.json())
+    .then(data => {
+        const citySelect = document.getElementById('city');
+        data["cities"].forEach(city => {
+            const option = document.createElement('option');
+            option.value = city; // Set the option value
+            option.textContent = city; // Set the option text 
+            citySelect.appendChild(option);
+        });
+    })
+    .catch(error => console.error('Error fetching data:', error));
+drawChart_bar1("Albuquerque");
+
+$("#city").on('change', function(){
+    var cityName = $(this).val();
+    drawChart_bar1(cityName)
+});
