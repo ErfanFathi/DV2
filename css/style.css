@@ -10,3 +10,56 @@ h1, h2, h3 {
 p{
     font-family: 'Fira Sans', sans-serif;
 }
+
+/* styles for select box */
+select {
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 1rem;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 0.45rem;
+    margin-bottom: 2rem;
+    width: 100%;
+    box-sizing: border-box;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.navbar-nav {
+    font-family: 'Fira Sans';
+    font-size: 1rem;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+/* for id: bar1, city */
+#bar1 {
+    font-family: 'Fira Sans';
+    font-size: 1rem;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 0.45rem;
+    margin-bottom: 2rem;
+    width: 100%;
+    box-sizing: border-box;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+#city {
+    font-family: 'Fira Sans';
+    font-size: 1rem;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 0.45rem;
+    margin-bottom: 2rem;
+    width: 100%;
+    box-sizing: border-box;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
