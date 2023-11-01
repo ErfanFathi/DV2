@@ -151,7 +151,7 @@ function drawChart_bar1(name) {
 }
 
 // Selectation Part
-fetch("../utils/cities.json")
+fetch("./DV2/utils/cities.json")
     .then(response => response.json())
     .then(data => {
         const citySelect = document.getElementById('city');
