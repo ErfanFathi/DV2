@@ -5,3 +5,4 @@
 ## The `DV2` Team Members
 * [Erfan Fathi](https://github.com/ErfanFathi)
 * [Mahya Hasani](https://github.com/mahya1010)
+* [Sara Samieizafarghandi](https://github.com/sarasamiee)
