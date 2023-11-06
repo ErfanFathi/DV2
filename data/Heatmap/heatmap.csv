@@ -1,0 +1,26 @@
+city,scientific_name,count
+Denver,Acer platanoides,7945
+Denver,Gleditsia triacanthos,24178
+Denver,Platanus acerifolia,1814
+Denver,Pyrus calleryana,7133
+Denver,Lagerstroemia indica,0
+Los Angeles,Acer platanoides,6
+Los Angeles,Gleditsia triacanthos,456
+Los Angeles,Platanus acerifolia,17477
+Los Angeles,Pyrus calleryana,7500
+Los Angeles,Lagerstroemia indica,34729
+New York,Acer platanoides,40112
+New York,Gleditsia triacanthos,64264
+New York,Platanus acerifolia,87014
+New York,Pyrus calleryana,58931
+New York,Lagerstroemia indica,0
+Portland,Acer platanoides,19209
+Portland,Gleditsia triacanthos,1412
+Portland,Platanus acerifolia,0
+Portland,Pyrus calleryana,0
+Portland,Lagerstroemia indica,852
+San Jose,Acer platanoides,2868
+San Jose,Gleditsia triacanthos,4037
+San Jose,Platanus acerifolia,26291
+San Jose,Pyrus calleryana,9631
+San Jose,Lagerstroemia indica,21636
