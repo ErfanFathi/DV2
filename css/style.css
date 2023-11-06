@@ -17,6 +17,7 @@ select {
     font-size: 1rem;
     padding: 0.5rem;
     border: 1px solid #ccc;
+    color: #ffffff;
     border-radius: 0.45rem;
     margin-bottom: 2rem;
     width: 100%;
@@ -36,15 +37,12 @@ select {
 }
 
 /* for id: bar1, city */
-#bar1 {
+#bar1, #heatmap, #tooltip {
     font-family: 'Fira Sans';
     font-size: 1rem;
     padding: 0.5rem;
-    border: 1px solid #ccc;
-    border-radius: 0.45rem;
     margin-bottom: 2rem;
     width: 100%;
-    box-sizing: border-box;
     margin-left: auto;
     margin-right: auto;
     display: block;
