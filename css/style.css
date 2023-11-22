@@ -9,6 +9,15 @@ h1, h2, h3 {
 /* Apply fonts to paragraphs and text */
 p{
     font-family: 'Fira Sans', sans-serif;
+    color: #000000;
+    border: 1px solid #ccc;
+    border-radius: 0.45rem;
+    margin-bottom: 2rem;
+    width: 100%;
+    box-sizing: border-box;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
 }
 
 /* styles for select box */
@@ -60,4 +69,11 @@ select {
     margin-left: auto;
     margin-right: auto;
     display: block;
+}
+
+.link {
+    font-family: 'Fira Sans';
+    fill: none;
+    stroke:#ff3300;
+    stroke-opacity: 0.8;
 }
