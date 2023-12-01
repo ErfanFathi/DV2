@@ -1,9 +1,9 @@
 const URL = "https://erfanfathi.github.io/DV2/";
 
 // Set the dimensions and margins of the graph
-var margin = { top: 10, right: 100, bottom: 10, left: 200 },
-  width = 1200 - margin.left - margin.right,
-  height = 1000 - margin.top - margin.bottom;
+var margin = { top: 10, right: 10, bottom: 10, left: 10 },
+  width = 1700 - margin.left - margin.right,
+  height = 2000 - margin.top - margin.bottom;
 
 // Format variables
 var formatNumber = d3.format(",.0f"), // zero decimal places
@@ -19,8 +19,8 @@ var svg = d3.select("body").append("svg")
 
 // Set the sankey diagram properties
 var sankey = d3.sankey()
-  .nodeWidth(40)
-  .nodePadding(45)
+  .nodeWidth(26)
+  .nodePadding(30)
   .size([width, height]);
 
 var path = sankey.links();
