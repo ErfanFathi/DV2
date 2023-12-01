@@ -72,8 +72,18 @@ select {
 }
 
 .link {
-    font-family: 'Fira Sans';
     fill: none;
-    stroke:#ff3300;
-    stroke-opacity: 0.8;
+    stroke: darkblue;
+    stroke-opacity: .2;
+}
+
+.node rect {
+    cursor: move;
+    fill-opacity: .9;
+    shape-rendering: crispEdges;
+}
+  
+.node text {
+    pointer-events: none;
+    text-shadow: 0 1px 0 #fff;
 }
