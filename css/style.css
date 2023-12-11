@@ -7,10 +7,8 @@ h1, h2, h3 {
 }
 
 /* Apply fonts to paragraphs and text */
-p{
+p, input, button, h4 {
     font-family: 'Fira Sans', sans-serif;
-    color: #000000;
-    border: 1px solid #ccc;
     border-radius: 0.45rem;
     margin-bottom: 2rem;
     width: 100%;
