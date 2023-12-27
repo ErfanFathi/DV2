@@ -85,3 +85,20 @@ select {
     pointer-events: none;
     text-shadow: 0 1px 0 #fff;
 }
+
+/* Legend Position Style */
+.legend {
+	position:absolute;
+	left:20px;
+	top:80px;
+}
+
+.axis text {
+	font: 10px 'Fira Sans';
+}
+
+.axis line, .axis path {
+	fill: none;
+	stroke: #000;
+	shape-rendering: crispEdges;
+}
