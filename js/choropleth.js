@@ -30,11 +30,25 @@ function drawChart_choropleth()
             "<br>" 
             + "State : " + event.properties.name
             + "<br>"
-            + "Abundance : " + event.properties.value
+            + "Density : " + event.properties.value
             + "<br>"
             + "Area : " + event.properties.area)
-        .style("left", (width + 150) + "px")
-        .style("top", (height/2) + "px")
+        .style("left", path.centroid(event)[0] + 400 + "px")
+        .style("top", path.centroid(event)[1] + 100 + "px")
+    }
+
+    const onmousemove = (event, d) => {
+        tooltip
+        .style("opacity", 1)
+        .html("Postal : " + event.properties.abbr + 
+                "<br>" 
+                + "State : " + event.properties.name
+                + "<br>"
+                + "Density : " + event.properties.value
+                + "<br>"
+                + "Area : " + event.properties.area)
+        .style("left", path.centroid(event)[0] + 400 + "px")
+        .style("top", path.centroid(event)[1] + 100 + "px")
     }
 
     const onmouseout = (event, d) => {
@@ -106,6 +120,7 @@ function drawChart_choropleth()
         .style("stroke-width", "1")
         .style("fill", function(d) { return ramp(d.properties.value) })
         .on("mouseover", onmouseover)
+        .on("mousemove", onmousemove)
         .on("mouseout", onmouseout);
         
     });
@@ -125,7 +140,7 @@ function drawChart_choropleth_density()
     var div_id1 = "choropleth_density"
 
     // add tooltip
-    const tooltip =d3.select('body').select("#" + div_id1)
+    const tooltip =d3.select('body')
     .append("div")
     .style("opacity", 0)
     .attr("class", "tooltip")
@@ -133,25 +148,6 @@ function drawChart_choropleth_density()
     .style("border-width", "1px")
     .style("background-color", "white")
     .style("font-family","Fira Sans")
-
-    const onmouseover = (event, d) => {
-        tooltip
-        .style("opacity", 1)
-        .html("Postal : " + event.properties.abbr + 
-            "<br>" 
-            + "State : " + event.properties.name
-            + "<br>"
-            + "Density : " + event.properties.value
-            + "<br>"
-            + "Area : " + event.properties.area)
-        .style("left", (width1 + 150) + "px")
-        .style("top", 1.8 * height1 + "px")
-    }
-
-    const onmouseout = (event, d) => {
-        tooltip
-        .style("opacity", 0)
-    }
 
     // D3 Projection
     var projection = d3.geoAlbersUsa()
@@ -167,6 +163,39 @@ function drawChart_choropleth_density()
         .append("svg")
         .attr("width", width1)
         .attr("height", height1);
+
+    const onmouseover = (event, d) => {
+        tooltip
+        .style("opacity", 1)
+        .html("Postal : " + event.properties.abbr + 
+            "<br>" 
+            + "State : " + event.properties.name
+            + "<br>"
+            + "Density : " + event.properties.value
+            + "<br>"
+            + "Area : " + event.properties.area)
+        .style("left", path.centroid(event)[0] + 400 + "px")
+        .style("top", path.centroid(event)[1] + (height1 * 1.3) + "px")
+    }
+
+    const onmousemove = (event, d) => {
+        tooltip
+        .style("opacity", 1)
+        .html("Postal : " + event.properties.abbr + 
+                "<br>" 
+                + "State : " + event.properties.name
+                + "<br>"
+                + "Density : " + event.properties.value
+                + "<br>"
+                + "Area : " + event.properties.area)
+        .style("left", path.centroid(event)[0] + 400 + "px")
+        .style("top", path.centroid(event)[1] + (height1 * 1.3) + "px")
+    }
+
+    const onmouseout = (event, d) => {
+        tooltip
+        .style("opacity", 0)
+    }
 
     // Load in my states data!
     d3.csv(URL + "data/Maps/statesdata_2.csv", function(data) {
@@ -217,6 +246,7 @@ function drawChart_choropleth_density()
         .style("stroke-width", "1")
         .style("fill", function(d) { return ramp(d.properties.value) })
         .on("mouseover", onmouseover)
+        .on("mousemove", onmousemove)
         .on("mouseout", onmouseout);
         
     });
